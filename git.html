@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flame Tech Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Video background styling */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* behind all content */
+    }
+
+    /* Overlay on top of video */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4); /* adjust darkness */
+      z-index: 0;
+    }
+
+    
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-sans">
+
+  
+  <video id="bg-video" autoplay muted loop playsinline>
+    
+    <source src="https://www.pexels.com/download/video/854213/" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="overlay"></div>
+
+  <!-- ✅ Wrap ALL existing content in .content -->
+  <div class="content">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-opacity-50 bg-black backdrop-blur-md px-6 py-4 flex justify-between items-center z-50">
+      <h1 class="text-2xl font-bold">Flame Tech</h1>
+      <div class="space-x-6">
+        <a href="#projects" class="hover:text-yellow-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Black Man Portrait Inside Circle -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+      <!-- Circle with portrait, no forced crop -->
+      <div class="w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center">
+        <img 
+          src="https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg" 
+          alt="Flame Tech" 
+          class="max-w-full max-h-full">
+      </div>
+
+      <h1 class="text-6xl md:text-7xl font-extrabold mb-4 animate-pulse">Flame Tech</h1>
+      <p class="text-xl md:text-2xl mb-8">Full-Stack Developer | Frontend & Backend | Building High Tech Projects</p>
+
+      <div class="flex space-x-4">
+        <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 hover:scale-105 transform transition">
+          My Projects
+        </a>
+        <a href="#contact" class="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 hover:scale-105 transform transition">
+          Contact Me
+        </a>
+      </div>
+
+      <div class="mt-12 flex space-x-6 text-2xl">
+        <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
+
+<!-- Projects Section with Real Pictures and Coming Soon Alert -->
+<section id="projects" class="py-20 px-4 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- Crypto Portfolio Tracker -->
+    <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+      <img
+        src="https://images.pexels.com/photos/6770845/pexels-photo-6770845.jpeg"
+        alt="Crypto portfolio dashboard"
+        class="rounded mb-4 w-full object-cover h-48">
+      <h3 class="font-bold text-xl mb-2">Crypto Portfolio Tracker</h3>
+      <p class="mb-4">Track cryptocurrencies with real-time prices, React + Tailwind + API integration.</p>
+      <a href="#" onclick="comingSoon()" class="text-blue-600 font-semibold hover:underline">View Project →</a>
+    </div>
+    
+    <!-- Real Estate Platform -->
+    <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+      <img
+        src="https://images.pexels.com/photos/3288103/pexels-photo-3288103.png"
+        alt="Real estate app on tablet"
+        class="rounded mb-4 w-full object-cover h-48">
+      <h3 class="font-bold text-xl mb-2">Real Estate Platform</h3>
+      <p class="mb-4">Post, search & filter properties with interactive map and responsive UI.</p>
+      <a href="#" onclick="comingSoon()" class="text-blue-600 font-semibold hover:underline">View Project →</a>
+    </div>
+    
+    <!-- Freelance Marketplace -->
+    <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+      <img
+        src="https://images.pexels.com/photos/6039895/pexels-photo-6039895.jpeg"
+        alt="Freelancer workspace"
+        class="rounded mb-4 w-full object-cover h-48">
+      <h3 class="font-bold text-xl mb-2">Freelance Marketplace</h3>
+      <p class="mb-4">Multi-user platform with job posting, chat system & ratings.</p>
+      <a href="#" onclick="comingSoon()" class="text-blue-600 font-semibold hover:underline">View Project →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 text-center bg-black bg-opacity-50">
+  <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+  <p class="mb-6 text-lg">Email: mf1874548@gmail.com</p>
+  <p class="mb-6 text-lg">Phone: +234 704 439 9590</p>
+  <a href="https://wa.me/2347044399590?text=Hello%20Flame%20Tech,%20I%20want%20to%20contact%20you" 
+     class="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 hover:scale-105 transform transition" 
+     target="_blank">
+    Send Message on WhatsApp
+  </a>
+</section>
+
+<!-- JavaScript for Coming Soon Alert -->
+<script>
+function comingSoon() {
+  alert("Coming Soon!");
+}
+</script>
+
+</div><!-- /content -->
+</section>
+</body>
+ </html>
